@@ -1,4 +1,4 @@
-
+import { Tutor } from "./Tutor"
 
 export const Tutores = () => {
 
@@ -6,12 +6,13 @@ export const Tutores = () => {
         <section className="tutores-container"> 
             <h2>Tutores</h2>
             <ul>
-                <li>Santiago Denis</li>
-                <li>Agustin Ammazzagatti</li>
-                <li>Dario Pirozzo</li>
+                <Tutor nombre="Conrado Lanusse" edad={16} rol="Profesor"/>
+                <Tutor nombre="Santiago Denis" edad={24} rol="Tutor Adjunto"/>
+                <Tutor nombre="Dario Pirozzo" edad={35} rol="Tutor Regular"/>
+                <Tutor nombre="Agustin Ammazzagatti" edad={29} rol="Tutor Regular"/>
             </ul>
         </section>
     ) 
 }
 
-// export default Tutores
+export default Tutores

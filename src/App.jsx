@@ -1,14 +1,14 @@
 import './App.css'
-import { Contador } from './components/Clicker'
-import { Tutores } from './components/Tutores'
-
+// import './styles/styles.scss'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
 
   return (
     <>
-      <Contador />
-      {/* <Tutores /> */}
+      <Navbar />
+      <ItemListContainer greeting="hola mundo"/>
     </>
   )
 }

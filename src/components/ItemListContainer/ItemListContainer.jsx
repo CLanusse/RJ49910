@@ -2,6 +2,9 @@ import { useState, useEffect } from "react"
 import { pedirDatos } from "../../utils/utils"
 import ItemList from "../ItemList/ItemList"
 
+
+
+
 const ItemListContainer = () => {
     const [productos, setProdutos] = useState([])
     const [loading, setLoading] = useState(true)
@@ -14,6 +17,9 @@ const ItemListContainer = () => {
                 setProdutos( data )
                 setLoading( false )
             })
+        // fetch('basededatos')
+        //     .then(resp => resp.json())
+        //     .then(data => setProdutos(data))
     }, [])
 
     return (

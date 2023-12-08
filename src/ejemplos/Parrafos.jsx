@@ -1,10 +1,14 @@
 import { useRef } from "react";
 import Contenedor from "./Contenedor";
 import Boton from "./Boton";
+import useProductos from "../hooks/useProductos";
+import withProductsData from "./hoc/withProductsData";
 
-const Parrafos = () => {
+const Parrafos = ({loading, productos}) => {
+  // const { productos, loading } = useProductos()
+  console.log(loading, productos)
 
-    const ref = useRef()
+  const ref = useRef()
 
   return (
     <Contenedor>
@@ -169,4 +173,4 @@ const Parrafos = () => {
   );
 };
 
-export default Parrafos;
+export default withProductsData( Parrafos );

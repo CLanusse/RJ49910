@@ -1,21 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Boton from "./Boton";
+import useFetch from "../hooks/useFetch";
 
 const PokeApi = () => {
-  const [pokemon, setPokemon] = useState(null);
   const [id, setId] = useState(1)
-
-  useEffect(() => {
-
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPokemon(data);
-      });
-
-  }, [id]);
-
+  const { data: pokemon } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`, [id])
+  
   const handleAnterior = () => {
     id > 1 && setId(id - 1)
   }

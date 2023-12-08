@@ -1,36 +1,53 @@
-import { useState, useEffect } from "react"
-import { pedirDatos } from "../../utils/utils"
-import ItemList from "../ItemList/ItemList"
-
-
-
+import ItemList from "../ItemList/ItemList";
+import useProductos from "../../hooks/useProductos";
+// import withProductsData from "../../ejemplos/hoc/withProductsData";
+// import ProductsData from "../../ejemplos/renderprops/ProductsData";
 
 const ItemListContainer = () => {
-    const [productos, setProdutos] = useState([])
-    const [loading, setLoading] = useState(true)
+  const { productos, loading } = useProductos()
 
-    useEffect(() => {
-        setLoading(true)
+  return (
+        <>
+          {loading ? (
+            <h2 className="text-center text-4xl mt-8">Cargando...</h2>
+          ) : (
+            <ItemList productos={productos} />
+          )}
+        </>
+  );
+};
 
-        pedirDatos() // <= Promise
-            .then((data) => {
-                setProdutos( data )
-                setLoading( false )
-            })
-        // fetch('basededatos')
-        //     .then(resp => resp.json())
-        //     .then(data => setProdutos(data))
-    }, [])
+export default ItemListContainer;
 
-    return (
-       <>
-            {
-                loading
-                    ? <h2 className="text-center text-4xl mt-8">Cargando...</h2>
-                    : <ItemList productos={productos}/>
-            }
-       </>
-    )
-}
+// * HOC
+// const ItemListContainer = ({productos, loading}) => {
 
-export default ItemListContainer
+//     return (
+//        <>
+//             {
+//                 loading
+//                     ? <h2 className="text-center text-4xl mt-8">Cargando...</h2>
+//                     : <ItemList productos={productos}/>
+//             }
+//        </>
+//     )
+// }
+// export default withProductsData( ItemListContainer )
+
+// * Render Props
+// const ItemListContainer = () => {
+    
+//       return (
+//         <ProductsData>
+//           {(productos, loading) => (
+//             <>
+//               {loading ? (
+//                 <h2 className="text-center text-4xl mt-8">Cargando...</h2>
+//               ) : (
+//                 <ItemList productos={productos} />
+//               )}
+//             </>
+//           )}
+//         </ProductsData>
+//       );
+//     };

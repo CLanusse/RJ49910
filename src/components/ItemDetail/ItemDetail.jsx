@@ -2,11 +2,13 @@ import { useState } from "react";
 import Boton from "../../ejemplos/Boton";
 import QuantitySelector from "./QuantitySelector";
 import ColorSelector from "./ColorSelector";
+import { useNavigate } from "react-router-dom";
 
 
 const ItemDetail = ({ item }) => {
   const [cantidad, setCantidad] = useState(1)
   // const [color, setColor] = useState("")
+  const navigate = useNavigate()
 
   const handleAgregar = () => {
     const itemToCart = {
@@ -18,10 +20,17 @@ const ItemDetail = ({ item }) => {
     console.log(itemToCart)
   }
 
+  const handleVolver = () => {
+    navigate(-1)
+  }
+
   return (
     <div className="container m-auto mt-8">
-      <h3 className="text-2xl font-semibold">{item.name}</h3>
+      <Boton onClick={handleVolver}>Volver</Boton>
+      <h3 className="mt-4 text-2xl font-semibold">{item.name}</h3>
       <hr />
+
+
       <div className="flex gap-8 pt-4">
         <img src={item.img} alt={item.name} />
 
@@ -38,7 +47,6 @@ const ItemDetail = ({ item }) => {
           <Boton onClick={handleAgregar}>Agregar al carrito</Boton>
         </div>
       </div>
-
     </div>
   );
 };

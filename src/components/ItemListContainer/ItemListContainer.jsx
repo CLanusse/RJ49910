@@ -2,13 +2,14 @@ import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList";
 import { pedirDatos } from "../../utils/utils";
 import { useParams } from "react-router-dom";
+import Spinner from "../Loader/Spinner";
+import Loader from "../Loader/Loader";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true)
 
   const { categoryId } = useParams()
-  console.log(categoryId)
 
   useEffect(() => {
       setLoading(true)
@@ -28,7 +29,7 @@ const ItemListContainer = () => {
         <>
 
           {loading ? (
-            <h2 className="text-center text-4xl mt-8">Cargando...</h2>
+            <Loader />
           ) : (
             <ItemList productos={productos} />
           )}

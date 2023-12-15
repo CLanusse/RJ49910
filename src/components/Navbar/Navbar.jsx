@@ -1,6 +1,6 @@
 // import './Navbar.scss'
 import logo from "../../assets/vite.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const links = [
   {
@@ -47,13 +47,17 @@ const Navbar = () => {
 
         <nav className="flex gap-4">
           {links.map((link) => (
-            <Link
+
+            <NavLink
               key={link.href}
               to={link.href}
-              className="text-white hover:text-purple-400 text-lg uppercase font-semibold"
+              className={({ isActive }) => (
+                `text-lg uppercase font-semibold ${isActive ? "text-purple-400" : "text-white"}`
+              )}
             >
               {link.label}
-            </Link>
+            </NavLink>
+
           ))}
         </nav>
 
@@ -64,3 +68,15 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// <NavLink
+// key={link.href}
+// to={link.href}
+// className={({ isActive }) => 
+//   isActive 
+//     ? "text-purple-400 text-lg uppercase font-bold"
+//     : "text-white text-lg uppercase font-semibold"
+// }
+// >
+// {link.label}
+// </NavLink>

@@ -18,8 +18,13 @@ const Posts = () => {
     }
   }, [])
 
+  const title = "Hola mundo"
+
   return (
     <div className="container m-auto pt-8">
+
+      <h1>{ title.split("").map((char, i) => <span>{char}</span>) }</h1>
+
       <Boton onClick={handleClick}>
         Click me
       </Boton>

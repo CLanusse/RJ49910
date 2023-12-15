@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { MOCK_DATA } from "../mock/data"
+import MOCK_DATA from "../mock/data.json"
 
 export const pedirDatos = () => {
 

@@ -23,7 +23,7 @@ function App() {
         <Route path="/item/:itemId" element={ <ItemDetailContainer /> } />
 
         <Route path="/pokeapi" element={ <PokeApi /> }/>
-        {/* <Route path="/posts" element={ <Posts /> }/> */}
+        <Route path="/posts" element={ <Posts /> }/>
 
         <Route path="/not-found" element={ <h2>Not found</h2> }/>
         <Route path="*" element={ <Navigate to={"/not-found"}/> }/>

@@ -2,6 +2,8 @@ import { Tutor } from "./Tutor"
 
 export const Tutores = () => {
 
+    
+
     return (
         <section className="tutores-container"> 
             <h2>Tutores</h2>

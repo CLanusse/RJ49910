@@ -31,6 +31,10 @@ const links = [
     label: "Pokeapi",
     href: "/pokeapi",
   },
+  {
+    label: "Posts",
+    href: "/posts",
+  },
 ];
 
 const Navbar = () => {

@@ -6,6 +6,7 @@ export const MOCK_DATA = [
         price: 1500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'tvs',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
@@ -18,6 +19,7 @@ export const MOCK_DATA = [
         price: 2500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'tvs',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
@@ -30,6 +32,7 @@ export const MOCK_DATA = [
         price: 3500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'aires',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
@@ -42,6 +45,7 @@ export const MOCK_DATA = [
         price: 4500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'aires',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
@@ -54,6 +58,7 @@ export const MOCK_DATA = [
         price: 5500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'hornos',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
@@ -66,6 +71,7 @@ export const MOCK_DATA = [
         price: 6500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'heladeras',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
@@ -78,6 +84,7 @@ export const MOCK_DATA = [
         price: 7500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'heladeras',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
@@ -90,6 +97,7 @@ export const MOCK_DATA = [
         price: 8500,
         img: "https://dummyimage.com/250.x250/000/fff",
         category: 'muebles',
+        stock: 10,
         description: `There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are

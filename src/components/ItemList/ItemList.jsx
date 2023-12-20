@@ -1,7 +1,9 @@
+
 import ItemCard from "../ItemCard/ItemCard";
 
 
 const ItemList = ({productos}) => {
+
 
   return (
     <section className="container m-auto mt-8">

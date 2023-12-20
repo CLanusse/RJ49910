@@ -1,6 +1,7 @@
 // import './Navbar.scss'
 import logo from "../../assets/vite.svg";
 import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
 
 const links = [
   {
@@ -59,6 +60,8 @@ const Navbar = () => {
             </NavLink>
 
           ))}
+
+          <CartWidget />
         </nav>
 
         {/* <CartWidget /> */}

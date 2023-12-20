@@ -1,22 +1,22 @@
-import { useEffect } from "react";
+
 import useFetch from "../hooks/useFetch";
-import { useState } from "react";
 import Boton from "./Boton";
 
 const Posts = () => {
+
   const { data: posts } = useFetch(`https://jsonplaceholder.typicode.com/posts`)
 
   const handleClick = (event) => {
     console.log(event)
   }
 
-  useEffect(() => {
-    window.addEventListener('click', handleClick)
+  // useEffect(() => {
+  //   window.addEventListener('click', handleClick)
 
-    return () => {
-      window.removeEventListener('click', handleClick)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('click', handleClick)
+  //   }
+  // }, [])
 
   const title = "Hola mundo"
 

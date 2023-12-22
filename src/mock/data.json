@@ -4,7 +4,7 @@
     "price": 37247,
     "img": "http://dummyimage.com/250x250.png/cc0000/ffffff",
     "category": "tvs",
-    "stock": 72,
+    "stock": 0,
     "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."
   }, {
     "id": 2,
@@ -20,7 +20,7 @@
     "price": 9780,
     "img": "http://dummyimage.com/250x250.png/dddddd/000000",
     "category": "muebles",
-    "stock": 89,
+    "stock": 5,
     "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst."
   }, {
     "id": 4,
@@ -28,7 +28,7 @@
     "price": 37726,
     "img": "http://dummyimage.com/250x250.png/dddddd/000000",
     "category": "muebles",
-    "stock": 64,
+    "stock": 8,
     "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
   }, {
     "id": 5,
@@ -44,7 +44,7 @@
     "price": 38663,
     "img": "http://dummyimage.com/250x250.png/dddddd/000000",
     "category": "heladeras",
-    "stock": 90,
+    "stock": 9,
     "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
   }, {
     "id": 7,

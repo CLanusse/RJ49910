@@ -3,6 +3,7 @@ import Boton from "../../ejemplos/Boton";
 import QuantitySelector from "./QuantitySelector";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import Ejemplo from "../../ejemplos/Ejemplo";
 
 
 const ItemDetail = ({ item }) => {
@@ -36,6 +37,8 @@ const ItemDetail = ({ item }) => {
         <div>
           <p>{item.description}</p>
           <p className="text-xl font-bold">Precio: ${item.price}</p>
+          <Ejemplo />
+
 
           {
             isInCart( item.id )
@@ -46,7 +49,7 @@ const ItemDetail = ({ item }) => {
                     stock={item.stock}
                     setCantidad={ setCantidad }
                   />          
-                  <Boton onClick={handleAgregar}>Agregar al carrito</Boton>
+                  <Boton onClick={handleAgregar} disabled={item.stock === 0}>Agregar al carrito</Boton>
                 </>
           }
         </div>

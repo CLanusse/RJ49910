@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import Navbar from "./components/Navbar/Navbar";
 import { CartProvider } from "./context/CartContext";
 import { UserProvider } from "./context/UserContext";
+import { Contador } from "./ejemplos/Clicker";
 import PokeApi from "./ejemplos/PokeApi";
 import Posts from "./ejemplos/Posts";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -15,6 +16,8 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <Navbar />
+
+          <Contador />
 
           <Routes>
             <Route path="/" element={<ItemListContainer />} />

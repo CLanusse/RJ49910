@@ -26,15 +26,14 @@ const ItemListContainer = () => {
   }, [categoryId])
 
   return (
-        <>
-
-          {loading ? (
-            <Loader />
-          ) : (
-            <ItemList productos={productos} />
-          )}
-        </>
-  );
+    <>
+      {
+        loading
+          ? <Loader/>
+          : <ItemList productos={productos}/>
+      }
+    </>
+  )
 };
 
 export default ItemListContainer;

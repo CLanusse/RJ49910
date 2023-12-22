@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Boton from "./Boton"
 
 
@@ -47,10 +47,11 @@ export const Contador = () => {
     //     }
     // }, [counter]) // * Efecto de actualizacion (deps)
 
+    const fecha = useMemo(() => new Date(), [saludar])
 
     return (
         <div>
-           
+            <p>fyh: {fecha.toLocaleString()}</p>
             
             <Boton onClick={incrementar}>Sumar 1</Boton>
             <Boton onClick={restar}>Restar 1</Boton>

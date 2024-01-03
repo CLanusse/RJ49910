@@ -37,7 +37,7 @@ const ItemDetail = ({ item }) => {
         <div>
           <p>{item.description}</p>
           <p className="text-xl font-bold">Precio: ${item.price}</p>
-          <Ejemplo />
+          {/* <Ejemplo /> */}
 
 
           {

@@ -17,8 +17,6 @@ function App() {
         <BrowserRouter>
           <Navbar />
 
-          <Contador />
-
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route

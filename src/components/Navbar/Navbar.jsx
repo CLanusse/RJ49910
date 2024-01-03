@@ -39,7 +39,6 @@ const links = [
 ];
 
 const Navbar = () => {
-  console.log( window )
 
   return (
     <header className="bg-purpura">

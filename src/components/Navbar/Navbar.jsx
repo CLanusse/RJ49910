@@ -2,6 +2,9 @@
 import logo from "../../assets/vite.svg";
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
+import Boton from "../../ejemplos/Boton";
 
 const links = [
   {
@@ -39,6 +42,7 @@ const links = [
 ];
 
 const Navbar = () => {
+  const { user, logout } = useContext(UserContext)
 
   return (
     <header className="bg-purpura">
@@ -67,6 +71,11 @@ const Navbar = () => {
 
         {/* <CartWidget /> */}
       </div>
+
+      {user.logged && <div className="flex gap-4 items-center container m-auto">
+        <p className="text-white">{user.email}</p>
+        <Boton onClick={logout}>Cerrar sesión</Boton>
+      </div>}
     </header>
   );
 };

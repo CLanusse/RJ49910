@@ -43,6 +43,7 @@ const CartView = () => {
 
       <h4 className="text-4xl font-semibold">TOTAL: ${totalCart()}</h4>
       <Boton onClick={clearCart}>Vaciar carrito</Boton>
+      <Boton><Link to="/checkout">Terminar mi compra</Link></Boton>
     </section>
   );
 };

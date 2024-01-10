@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../firebase/config";
-import { collection, addDoc, setDoc, doc, updateDoc, getDoc } from "firebase/firestore";
+import { collection, writeBatch, addDoc, setDoc, doc, updateDoc, getDoc, query, where, documentId, getDocs } from "firebase/firestore";
 import Swal from "sweetalert2";
 
 const Checkout = () => {
@@ -22,7 +22,7 @@ const Checkout = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const orden = {
@@ -31,29 +31,50 @@ const Checkout = () => {
       total: totalCart(),
       fecha: new Date(),
     };
-
+    
+    const batch = writeBatch(db)
     const ordersRef = collection(db, "orders");
+    const productsRef = collection(db, 'productos')
+    const itemsQuery = query(productsRef, where( documentId(), 'in', cart.map(prod => prod.id) ))
+    console.log( cart.map(prod => prod.id) )
+    const querySnapshot = await getDocs(itemsQuery)
 
-    // cart.forEach(item => {
-    //     const docRef = doc(db, 'productos', item.id)
-    //     getDoc(docRef)
-    //         .then(doc => {
-    //             const stock = doc.data().stock
-    //             if (stock >= item.cantidad) {
-    //                 updateDoc(docRef, {
-    //                     stock: doc.data().stock - item.cantidad
-    //                 })
-    //             }
-    //         })
+    const outOfStock = []
+ 
+    // const promesas = cart.map((item) => {
+    //   const ref = doc(productsRef, item.id)
+    //   return getDoc(ref)
     // })
 
-    addDoc(ordersRef, orden).then((doc) => {
-        setOrderId(doc.id)
-        clearCart()
+    // const docs = await Promise.all(promesas)
+    // console.log(docs)
+    // docs.forEach(doc => {
+    querySnapshot.docs.forEach(doc => {
+      const item = cart.find(prod => prod.id === doc.id)
+      const stock = doc.data().stock
+     
+      if (stock >= item.cantidad) {  // ? doc.ref === doc(db, 'productos', doc.id)
+        batch.update(doc.ref, {
+          stock: stock - item.cantidad
+        })
+      } else {
+        outOfStock.push(item)
+      }
+    })
 
-        Swal.fire("Gracias por tu compra!")
-    });
+    if (outOfStock.length === 0) {
+      batch.commit()
+        .then(() => {      
+          addDoc(ordersRef, orden).then((doc) => {
+              setOrderId(doc.id)
+              clearCart()
 
+              Swal.fire("Gracias por tu compra!")
+          });
+        })
+    } else {
+      Swal.fire("Hay items sin stock")
+    }
 
   };
 
